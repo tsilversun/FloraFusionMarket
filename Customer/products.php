@@ -23,6 +23,55 @@
     
     <title>Products</title>
 </head>
+<style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            width: 80%;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Table-like layout */
+        .table {
+            display: table;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .table-row {
+            display: table-row;
+        }
+
+        .table-cell {
+            display: table-cell;
+            padding: 10px;
+        }
+    </style>
 <body>
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -88,12 +137,62 @@
 
 
     
-    <div class="max-w-5xl mx-auto p-4">
+<div class="max-w-5xl mx-auto p-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             <!-- Product 1 -->
             <div class="bg-white rounded shadow-md overflow-hidden">
                 <div class="aspect-w-3 aspect-h-4">
-                    <img src="../assets/img/plant.jpeg" alt="Plant Product" class="object-cover w-full h-full">
+                    <!-- Plant Image -->
+    <img src="../assets/img/plant.jpeg" alt="Plant Product" class="object-cover w-full h-full cursor-pointer" id="openModalButton">
+    
+    <!-- Modal -->
+    <div id="plantModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalButton">&times;</span>
+            <!-- Plant Image -->
+            <img src="../assets/img/plant.jpeg" alt="Plant Product" class="object-cover w-full h-auto">
+            <!-- Table-like layout for Plant Name, Price, Wishlist, and Add to Cart -->
+            <div class="table">
+                <div class="table-row">
+                    <div class="table-cell">
+                        <h2 class="text-2xl font-semibold">Snake Plant</h2>
+                    </div>
+                    <div class="table-cell">
+                        <p class="text-lg font-bold text-green-500">PHP 119.99</p>
+                    </div>
+                    <div class="table-cell">
+                        <button class="bg-red-500 text-white px-4 py-2 rounded-full">Add to Wishlist</button>
+                    </div>
+                    <div class="table-cell">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-full">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Description -->
+            <p class="my-4">Description: <br> Description ni dire dapita.</p>
+            <!-- Reviews -->
+            <h3 class="text-xl font-semibold my-2">Reviews</h3>
+            <div class="border-t border-gray-300">
+                <!-- Review 1 -->
+                <div class="flex items-center my-2">
+                    <div class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0"></div>
+                    <div class="ml-2">
+                        <p class="text-gray-800 font-semibold">Reviewer Name</p>
+                        <p class="text-gray-600">"Great plant! I love it."</p>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="flex items-center my-2">
+                    <div class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0"></div>
+                    <div class="ml-2">
+                        <p class="text-gray-800 font-semibold">Another Reviewer</p>
+                        <p class="text-gray-600">"Beautiful plant, highly recommended."</p>
+                    </div>
+                </div>
+                <!-- Add more reviews as needed -->
+            </div>
+        </div>
+    </div>
                 </div>
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Snake Plant</h3>
@@ -113,173 +212,10 @@
                     </div>
                 </div>
             </div>
-            <!-- product 2-->
-            <div class="bg-white rounded shadow-md overflow-hidden">
-                <div class="aspect-w-3 aspect-h-4">
-                    <img src="../assets/img/plant.jpeg" alt="Plant Product" class="object-cover w-full h-full">
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold mb-2">Snake Plant</h3>
-                    <p class="text-gray-600">Easy to care for indoor plant.</p>
-                    <div class="mt-2">
-                        <span class="text-blue-500 font-semibold">199</span>
-                        <span class="text-gray-500 ml-2 line-through">199</span>
-                    </div>
-                   
-                    <div class="mt-4 flex space-x-2">
-                        <button class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
-                        <i class="fas fa-shopping-cart"></i>
-                        </button>
-                        <button class="text-gray-500 hover:text-red-500">
-                        <i class="fas fa-heart"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- product 3-->
-            <div class="bg-white rounded shadow-md overflow-hidden">
-                <div class="aspect-w-3 aspect-h-4">
-                    <img src="../assets/img/plant.jpeg" alt="Plant Product" class="object-cover w-full h-full">
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold mb-2">Snake Plant</h3>
-                    <p class="text-gray-600">Easy to care for indoor plant.</p>
-                    <div class="mt-2">
-                        <span class="text-blue-500 font-semibold">199</span>
-                        <span class="text-gray-500 ml-2 line-through">199</span>
-                    </div>
-                   
-                    <div class="mt-4 flex space-x-2">
-                        <button class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
-                        <i class="fas fa-shopping-cart"></i>
-                        </button>
-                        <button class="text-gray-500 hover:text-red-500">
-                        <i class="fas fa-heart"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded shadow-md overflow-hidden">
-                <div class="aspect-w-3 aspect-h-4">
-                    <img src="../assets/img/plant.jpeg" alt="Plant Product" class="object-cover w-full h-full">
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold mb-2">Snake Plant</h3>
-                    <p class="text-gray-600">Easy to care for indoor plant.</p>
-                    <div class="mt-2">
-                        <span class="text-blue-500 font-semibold">199</span>
-                        <span class="text-gray-500 ml-2 line-through">199</span>
-                    </div>
-                   
-                    <div class="mt-4 flex space-x-2">
-                        <button class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
-                        <i class="fas fa-shopping-cart"></i>
-                        </button>
-                        <button class="text-gray-500 hover:text-red-500">
-                        <i class="fas fa-heart"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded shadow-md overflow-hidden">
-                <div class="aspect-w-3 aspect-h-4">
-                    <img src="../assets/img/plant.jpeg" alt="Plant Product" class="object-cover w-full h-full">
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold mb-2">Snake Plant</h3>
-                    <p class="text-gray-600">Easy to care for indoor plant.</p>
-                    <div class="mt-2">
-                        <span class="text-blue-500 font-semibold">199</span>
-                        <span class="text-gray-500 ml-2 line-through">199</span>
-                    </div>
-                   
-                    <div class="mt-4 flex space-x-2">
-                        <button class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
-                        <i class="fas fa-shopping-cart"></i>
-                        </button>
-                        <button class="text-gray-500 hover:text-red-500">
-                        <i class="fas fa-heart"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded shadow-md overflow-hidden">
-                <div class="aspect-w-3 aspect-h-4">
-                    <img src="../assets/img/plant.jpeg" alt="Plant Product" class="object-cover w-full h-full">
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold mb-2">Snake Plant</h3>
-                    <p class="text-gray-600">Easy to care for indoor plant.</p>
-                    <div class="mt-2">
-                        <span class="text-blue-500 font-semibold">199</span>
-                        <span class="text-gray-500 ml-2 line-through">199</span>
-                    </div>
-                   
-                    <div class="mt-4 flex space-x-2">
-                        <button class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
-                        <i class="fas fa-shopping-cart"></i>
-                        </button>
-                        <button class="text-gray-500 hover:text-red-500">
-                        <i class="fas fa-heart"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded shadow-md overflow-hidden">
-                <div class="aspect-w-3 aspect-h-4">
-                    <img src="../assets/img/plant.jpeg" alt="Plant Product" class="object-cover w-full h-full">
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold mb-2">Snake Plant</h3>
-                    <p class="text-gray-600">Easy to care for indoor plant.</p>
-                    <div class="mt-2">
-                        <span class="text-blue-500 font-semibold">199</span>
-                        <span class="text-gray-500 ml-2 line-through">199</span>
-                    </div>
-                   
-                    <div class="mt-4 flex space-x-2">
-                        <button class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
-                        <i class="fas fa-shopping-cart"></i>
-                        </button>
-                        <button class="text-gray-500 hover:text-red-500">
-                        <i class="fas fa-heart"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded shadow-md overflow-hidden">
-                <div class="aspect-w-3 aspect-h-4">
-                    <img src="../assets/img/plant.jpeg" alt="Plant Product" class="object-cover w-full h-full">
-                </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold mb-2">Snake Plant</h3>
-                    <p class="text-gray-600">Easy to care for indoor plant.</p>
-                    <div class="mt-2">
-                        <span class="text-blue-500 font-semibold">199</span>
-                        <span class="text-gray-500 ml-2 line-through">199</span>
-                    </div>
-                   
-                    <div class="mt-4 flex space-x-2">
-                        <button class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600">
-                        <i class="fas fa-shopping-cart"></i>
-                        </button>
-                        <button class="text-gray-500 hover:text-red-500">
-                        <i class="fas fa-heart"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
             <!-- Add more products -->
         </div>
     </div>
-
-
+  <script src="../assets/productsmodal.js"></script>
     <script src="../assets/drop_down.js"></script>
 </body>
 </html>

@@ -107,7 +107,8 @@
                 <td class="px-6 py-4 whitespace-nowrap">January</td>
                 <td class="px-6 py-4 whitespace-nowrap">2023</td>
                 <td class="px-6 py-4 whitespace-nowrap">
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Update</button>
+                <button id="viewSalesButton" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md ml-2">View</button>
+                    <button id="updateSalesButton" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Update</button>
                     <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md ml-2">Delete</button>
                 </td>
             </tr>
@@ -116,8 +117,7 @@
 </div>
 <?php include '../Seller/sales_Modal.php'; ?>
 </div>
-
 <script src="../assets/salesrep_modal.js"></script>
-
+<script src="../assets/salesrep_Up_modal.js"></script>
 </body>
 </html>

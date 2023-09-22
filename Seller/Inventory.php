@@ -82,12 +82,14 @@
 </div>
         
     </div>
-    
+        
+    <!-- Add Category Button -->
+
     <div class="flex-1 bg-white p-4 shadow-md">
     <h2 class="text-xl font-semibold mb-4">Category</h2>
     <div class="flex justify-between items-center mb-4">
         <div class="relative ml-auto">
-        <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md">+</button>
+        <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md" id="addCategoryButton">+</button>
             <input type="text" class="border border-gray-300 rounded-md px-3 py-2 pr-10 placeholder-gray-400 focus:outline-none focus:ring focus:border-blue-500" placeholder="Search">
         </div>
     </div>
@@ -104,24 +106,7 @@
                 <td class="px-6 py-4 whitespace-nowrap">Cactus</td>
                 <td class="px-6 py-4 whitespace-nowrap">28</td>
                 <td class="px-6 py-4 whitespace-nowrap">
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Update</button>
-                    <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md ml-2">Delete</button>
-                </td>
-            </tr>
-            
-            <tr>
-                <td class="px-6 py-4 whitespace-nowrap">Succulent</td>
-                <td class="px-6 py-4 whitespace-nowrap">50</td>
-                <td class="px-6 py-4 whitespace-nowrap">
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Update</button>
-                    <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md ml-2">Delete</button>
-                </td>
-            </tr>
-           <tr>
-                <td class="px-6 py-4 whitespace-nowrap">Snake Plant</td>
-                <td class="px-6 py-4 whitespace-nowrap">10</td>
-                <td class="px-6 py-4 whitespace-nowrap">
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Update</button>
+                <button id="updateButton" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Update</button>
                     <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md ml-2">Delete</button>
                 </td>
             </tr>
@@ -132,11 +117,61 @@
 </div>
 
 
+<!-- Modal for Add Category -->
+<div id="addCategoryModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+  <div class="modal-container">
+    <div class="modal-content bg-white p-6 rounded-lg shadow-lg">
+      <div class="flex justify-end">
+        <button class="text-gray-500 hover:text-gray-700" onclick="closeModal('addCategoryModal')">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <h2 class="text-2xl font-semibold mb-4">Add Category</h2>
+      <!-- Category Name -->
+      <input type="text" placeholder="Category Name" class="mt-1 p-2 w-full border rounded">
+      <!-- Total Products -->
+      <input type="number" placeholder="Total Products" class="mt-1 p-2 w-full border rounded">
+      <!-- Add Button -->
+      <button class="bg-green-500 mt-3 text-white rounded-md py-2 px-4 hover:bg-green-600">Add</button>
+    </div>
+  </div>
+</div>
 
 
 
+<!-- Modal for Update Plant -->
+<div id="updatePlantModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+  <div class="modal-container">
+    <div class="modal-content bg-white p-6 rounded-lg shadow-lg">
+      <div class="flex justify-end">
+        <button class="text-gray-500 hover:text-gray-700" onclick="closeModal('updatePlantModal')">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <h2 class="text-2xl font-semibold mb-4">Update Plant</h2>
+      <!-- Upload Image -->
+      <input type="file" class="mt-1 p-2 w-full border rounded">
+      <!-- ID Number -->
+      <input type="text" placeholder="ID Number" class="mt-1 p-2 w-full border rounded">
+      <!-- Plant Name -->
+      <input type="text" placeholder="Plant Name" class="mt-1 p-2 w-full border rounded">
+      <!-- Quantity -->
+      <input type="number" placeholder="Quantity" class="mt-1 p-2 w-full border rounded">
+      <!-- Price -->
+      <input type="number" placeholder="Price" class="mt-1 p-2 w-full border rounded"">
+      <!-- Description -->
+      <textarea placeholder="Description" class="mt-1 p-2 w-full border rounded""></textarea>
+      <!-- Update Button -->
+      <button class="bg-blue-500 text-white rounded-md py-2 px-4 hover:bg-blue-600">Update</button>
+    </div>
+  </div>
+</div>
 
 
-
+<script src="../assets/addUpdateModal.js"></script>
 </body>
 </html>

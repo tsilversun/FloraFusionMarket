@@ -141,6 +141,7 @@
             </div>
         </div>
         <script src="../assets/modal_cart.js"></script>
+        <script src="../assets/paymentMethod.js"> </script>
     <script src="../assets/drop_down.js"></script>
 </body>
 </html>

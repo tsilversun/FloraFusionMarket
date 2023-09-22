@@ -117,7 +117,8 @@
                 <td class="px-6 py-4 whitespace-nowrap">150.00</td>
                 <td class="px-6 py-4 whitespace-nowrap">Shipped</td>
                 <td class="px-6 py-4 whitespace-nowrap">
-                    <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md">Delete</button>
+                <button id="viewOrderButton" class="bg-green-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md view-order-details">View</button>
+                <button class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md">Delete</button>
                 </td>
             </tr>
             <!-- Repeat the above row for each order -->
@@ -128,5 +129,60 @@
 </div>
 
 
+
+<!-- Modal for Order Details -->
+<div id="orderDetailsModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+  <div class="modal-container">
+    <div class="modal-content bg-white p-6 rounded-lg shadow-lg">
+      <div class="flex justify-end">
+        <button class="text-gray-500 hover:text-gray-700" onclick="closeModal('orderDetailsModal')">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <h2 class="text-2xl text-center font-semibold mb-4">Order Details</h2>
+      <!-- Order Number and Date -->
+      <div class="mb-4">
+        <p><strong>Order Number:</strong> 001</p>
+        <p><strong>Date:</strong> August 27, 2023</p>
+      </div>
+      <!-- Customer Information -->
+      <div class="mb-4">
+        <p><strong>Customer Name:</strong> JJA</p>
+        <p><strong>Address:</strong> Dapitan Cordova Cebu</p>
+        <p><strong>Contact Number:</strong> 09123456789</p>
+      </div>
+      <!-- Product Table -->
+      <table class="table-auto w-full mb-4">
+        <thead>
+          <tr>
+            <th class="px-4 py-2">Product Name</th>
+            <th class="px-4 py-2">Quantity</th>
+            <th class="px-4 py-2">Price</th>
+            <th class="px-4 py-2">Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border px-4 py-2">Cactus</td>
+            <td class="border px-4 py-2">2</td>
+            <td class="border px-4 py-2">100</td>
+            <td class="border px-4 py-2">50</td>
+          </tr>
+          <!-- Add more rows for other products if needed -->
+        </tbody>
+      </table>
+      <!-- Mode of Payment and Total Amount -->
+      <div class="mb-4">
+        <p><strong>Mode of Payment:</strong> COD</p>
+        <p><strong>Total Amount:</strong> 150</p>
+      </div>
+      <!-- Delivered Button -->
+      <button class="bg-green-500 text-white rounded-md py-2 px-4 hover:bg-green-600">Delivered</button>
+    </div>
+  </div>
+</div>  
+<script src="../assets/viewDetailsModal.js"></script>
 </body>
 </html>

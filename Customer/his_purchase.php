@@ -20,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/purchase.css">
     <title>Purchase History</title>
 </head>
 <body class="bg-gray-100">
@@ -93,14 +94,14 @@
                         <button class="text-red-500 hover:text-red-700 focus:outline-none">
                             Delete
                         </button>
-                        <button class="text-blue-500 hover:text-blue-700 ml-2 focus:outline-none" onclick="openRatingModal('Snake Plant')">
-                            Rate
-                        </button>
+
+        <button id="openModalButton" class="text-blue-500 hover:text-blue-700 ml-2 focus:outline-none">Rate
+    </button>
                     </td>
                 </tr>
 
                 <!-- Purchase History Item 2 (Add more items as needed) -->
-                <tr class="border-b">
+                <!-- <tr class="border-b">
                     <td class="py-2 px-4">56789</td>
                     <td class="py-2 px-4">2023-08-10</td>
                     <td class="py-2 px-4">2:45 PM</td>
@@ -115,7 +116,7 @@
                             Rate
                         </button>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>
@@ -159,6 +160,8 @@
         </div>
     </div>
 
+    <?php include '../Customer/rateModal.php'; ?>
+     <script src="../assets/rateModal.js"></script>
     <script src="../assets/drop_down.js"></script>
 </body>
 </html>

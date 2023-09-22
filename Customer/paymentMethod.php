@@ -51,44 +51,28 @@
 
                         
                         <div class="mb-4">
+                                        <div class="container mx-auto mt-8 p-4">
+                        <h1 class="text-2xl font-semibold mb-4">Select Payment Method</h1>
+                        <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="mode-of-payment">
                                 Mode of Payment
                             </label>
                             <select class="form-select border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="mode-of-payment">
-                                
-                                <option value="paypal">GCash</option>
-                                <option value="cash">Cash on Delivery</option>
+                                <option value="gcash">GCash</option>
+                                <option value="cod">Cash on Delivery</option>
                             </select>
                         </div>
 
-                    
                         <div class="text-center">
                             <button id="place-order-button" type="button" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none">
                                 Place Order
                             </button>
                         </div>
+                    </div>
+                        </div>
                     </form>
 
-                    
-                    <button id="close-order-details" class="mt-4 bg-gray-200 text-gray-600 py-2 px-4 rounded-full hover:bg-gray-300 focus:outline-none">
-                        Close
-                    </button>
+
                 </div>
             </div>
         </div>
-
-    
-        <div id="order-view-modal" class="fixed inset-0 z-10 flex items-center justify-center hidden">
-            <div class="modal-overlay absolute inset-0 bg-black opacity-50"></div>
-            <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-                <div class="modal-content py-4 text-left px-6">
-                    <!-- Content for order viewing modal -->
-
-                
-                    <button id="close-order-view" class="mt-4 bg-gray-200 text-gray-600 py-2 px-4 rounded-full hover:bg-gray-300 focus:outline-none">
-                        Close
-                    </button>
-                </div>
-            </div>
-
-       
