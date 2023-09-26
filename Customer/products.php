@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/tailwind.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     
     <title>Products</title>
@@ -72,9 +72,10 @@
             padding: 10px;
         }
     </style>
-<body>
+<body >
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <div id="product">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <div class="flex items-center">
                 <img src="../assets/img/FloraFusion.jpg" class="h-8 mr-3" alt="Plant Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">FloraFusion Market</span>
@@ -193,13 +194,25 @@
             </div>
         </div>
     </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th><h3 class="text-lg font-semibold mb-2">{{ product.name }}</h3></th>
+                <th><p class="text-gray-600">{{ product.des }}</p></th>
+                <th><span class="text-blue-500 font-semibold">{{ product.price }}</span></th>
+                <th><span class="text-gray-500 ml-2 line-through">{{ product.price }}</span></th>
+            </tr>
+        </thead>
+
+    </table>
                 </div>
                 <div class="p-4">
-                    <h3 class="text-lg font-semibold mb-2">Snake Plant</h3>
-                    <p class="text-gray-600">Easy to care for indoor plant.</p>
+                    <h3 class="text-lg font-semibold mb-2">{{ product.name }}</h3>
+                    <p class="text-gray-600">{{ product.des }}</p>
                     <div class="mt-2">
-                        <span class="text-blue-500 font-semibold">199</span>
-                        <span class="text-gray-500 ml-2 line-through">199</span>
+                        <span class="text-blue-500 font-semibold">{{ product.price }}</span>
+                        <span class="text-gray-500 ml-2 line-through">{{ product.price }}</span>
                     </div>
                    
                     <div class="mt-4 flex space-x-2">
@@ -215,7 +228,12 @@
             <!-- Add more products -->
         </div>
     </div>
-  <script src="../assets/productsmodal.js"></script>
+    </div>
+
+    <script src="../assets/services/axios.js"></script>
+    <script src="../assets/services/vue.3.js"></script>
+    <script src="../assets/services/product.js"></script>
+    <script src="../assets/productsmodal.js"></script>
     <script src="../assets/drop_down.js"></script>
 </body>
 </html>
